@@ -19,10 +19,7 @@
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = type.credentialFromResult(result);
                 token = credential.accessToken;
-                // The signed-in user info.
                 signedinuser = result.user;
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
             })
             .catch((error) => {
                 // Handle Errors here.
@@ -37,7 +34,7 @@
     };
 
     let phoneNumber = "+1 714-555-9898";
-    let verificationCode = "";
+    let verificationCode = "123456";
     let confirmationResult = null;
     let recaptchaVerifier = null;
 
@@ -91,17 +88,26 @@
     };
 </script>
 
-<p>DON'T CARE BEFORE</p>
+<p>This renders whether or not a user is signed in</p>
 <hr />
 <SignedIn let:user let:signOut>
     <p>SIGNED IN</p>
     <p>Hello {user.uid}</p>
+    {#if user.email=="brucem@dynamicrange.com"}
+        <p>Hi Bruce <i>(this is recognized because my GitHub login uses this address)</i>
+    {/if}
     <button on:click={signOut}>Sign Out</button>
+    <pre>{JSON.stringify({signedinuser,token}, null, 2)}</pre>
 </SignedIn>
 <hr />
 
+<SignedOut>
+<h2>Pick one:</h2>
+</SignedOut>
+
 <SignedOut let:auth>
-    <p>SIGNED OUT -- ANONYMOUS SIGNIN</p>
+    <p>ANONYMOUS SIGNIN</p>
+    <p><i>This is for systems like ecommerce where you save activities before they create an account -- like adding items to a cart, then really logging in at checkout</i></p>
     <button on:click={() => signInAnonymously(auth)}>Sign In anonymously</button
     >
 </SignedOut>
@@ -143,6 +149,6 @@
     {/if}
 </SignedOut>
 
-<p>DON'T CARE AFTER</p>
+<p>This too renders whether or not a user is signed in</p>
 <hr />
 <a href="/utest">utest</a>
