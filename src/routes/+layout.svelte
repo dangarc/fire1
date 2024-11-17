@@ -3,6 +3,10 @@
     import { initializeApp } from "firebase/app";
     import { getFirestore } from "firebase/firestore";
     import { getAuth } from "firebase/auth";
+    import PageHeader from "$lib/PageHeader.svelte";
+    import PageFooter from "$lib/PageFooter.svelte";
+
+    // export let data;
 
     import {
         PUBLIC_FIREBASE_API_KEY,
@@ -28,5 +32,9 @@
 </script>
 
 <FirebaseApp {auth} {firestore}>
-    <slot />
+    <PageHeader {auth} />
+       <slot />
+    <PageFooter {auth}/>
+    <!-- <pre> data {JSON.stringify(data, null, 2)} </pre>
+    <pre> auth {JSON.stringify(auth? auth : {}, null, 2)} </pre> -->
 </FirebaseApp>

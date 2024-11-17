@@ -1,38 +1,44 @@
-# sv
+# Starter Pack for using PostgreSQL with Svelte and SvelteKit
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## uses 'postgres' npm package
 
-## Creating a project
+# Assumptions:
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. you know how to type commands at a shell/terminal prompt
 
-```bash
-# create a new project in the current directory
-npx sv create
+2.  you have git installed.
 
-# create a new project in my-app
-npx sv create my-app
-```
+3. you have Node.js installed
 
-## Developing
+# running:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. git clone this
 
-```bash
-npm run dev
+2. Install PostgreSQL on your computer and start the server.
+   * Take note of any passwords you change!
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+3. I recommend installing the "PostgreSQL" VSCode extension by Weijan Chen so you can investigate the DB.
 
-## Building
+4. Connect to it from the PostgreSQL extension in VSCode - click Connect.
 
-To create a production version of your app:
+5. Create a database (e.g., 'containers')
+   * Best to do this from the PostgreSQL extension in VS Code - click on the '+' after making a connection.
 
-```bash
-npm run build
-```
+6. Open a PSQL window and paste in the schema (from ```schema.sql```) in it.
+   * Best to do this from the PostgreSQL extension in VS Code - click the tiny icon on "containers" that looks like a terminal
 
-You can preview the production build with `npm run preview`.
+7. create ```.env``` file with contents ```PGCONNECT=postgres://bjmckenz:yourpass@localhost:5432/containers``` in the project root (NOT inside SRC)
+   * Substitute at least your name, and perhaps where your DB is installed.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+6. npm install
+
+7. npm run dev
+   * click the link that is shown in the output.
+
+*Comments and feedback are welcome!*
+
+# Where am I deployed?
+
+*Replace this entire line with the URL*
+
+
