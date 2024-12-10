@@ -14,6 +14,7 @@
     let signedinuser = {};
     let token = "";
     let solved = false;
+    
 
     const do_popup = async (auth, provider, type) => {
         signInWithPopup(auth, provider)
@@ -115,16 +116,15 @@
                         items to a cart, then really logging in at checkout
                     </p>
                     <button on:click={() => signInAnonymously(auth)}
-                        >Sign In anonymously</button
-                    >
+                        >Sign In anonymously</button>
                 </div>
             </SignedOut>
 
             <SignedOut let:auth>
                 <div class="siButton">
                     <p class="type">GOOGLE POPUP</p>
-                    <button
-                        on:click={() =>
+                    <button 
+                        on:click={() => 
                             do_popup(auth, Gprovider, GoogleAuthProvider)}
                         >Sign In with popup</button
                     >
@@ -144,14 +144,11 @@
 
             <SignedOut let:auth>
                 <div class="siButton">
-                    >
                     <p class="type">FACEBOOK POPUP</p>
                     <p class="note">Not quite working</p>
                     <button
                         on:click={() =>
-                            do_popup(auth, FBprovider, FacebookAuthProvider)}
-                        >Sign In with popup</button
-                    >
+                            do_popup(auth, FBprovider, FacebookAuthProvider)}>Sign In with popup</button>
                 </div>
             </SignedOut>
 

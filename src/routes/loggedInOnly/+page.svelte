@@ -4,7 +4,7 @@
 </script>
 
 <SignedOut>
-    <Forbidden />
+    <Forbidden/>
 </SignedOut>
 
 <SignedIn let:user>

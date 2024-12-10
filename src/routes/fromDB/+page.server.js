@@ -6,10 +6,10 @@ let sortby = 'containernumber';
 export async function load() {
     const rows = await sql`
     SELECT
-        containerNumber,
-        nameOfShip,
-        containerSize,
-        dateContainerShipped
+        containernumber,
+        nameofship,
+        containersize,
+        datecontainershipped
     FROM
         containers
     ORDER BY
@@ -33,10 +33,10 @@ export const actions = {
 
 	add: async ({ request }) => {
 		const data = await request.formData();
-        const containerNumber = data.get('containerNumber');
-        const nameOfShip = data.get('nameOfShip');
-        const containerSize = data.get('containerSize');
-        const dateContainerShipped = data.get('dateContainerShipped');
+        const containerNumber = data.get('containernumber');
+        const nameOfShip = data.get('nameofship');
+        const containerSize = data.get('containersize');
+        const dateContainerShipped = data.get('datecontainershipped');
 
         if (containerNumber == 'ERROR') {
             return {
