@@ -29,5 +29,6 @@
         "postgres": "^3.4.4",
         "sveltefire": "^0.4.5",
         "vite-plugin-mkcert": "^1.17.5"
-    }
+    },
+    "engines": { "node": ">=20.0.0 <21.0.0" }
 }
