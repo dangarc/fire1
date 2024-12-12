@@ -7,7 +7,7 @@
     import PageFooter from "$lib/PageFooter.svelte";
 
     // export let data;
-/*
+
     import {
         PUBLIC_FIREBASE_API_KEY,
         PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -16,8 +16,8 @@
         PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
         PUBLIC_FIREBASE_APP_ID,
     } from "$env/static/public";
-*/
-    const firebaseConfig = {
+
+    const firebaseConfig =  {
         apiKey: PUBLIC_FIREBASE_API_KEY,
         authDomain: PUBLIC_FIREBASE_AUTH_DOMAIN,
         projectId: PUBLIC_FIREBASE_PROJECT_ID,
@@ -29,6 +29,8 @@
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app);
     const auth = getAuth(app);
+    
+    
 </script>
 
 <FirebaseApp {auth} {firestore}>
