@@ -7,7 +7,7 @@
     import PageFooter from "$lib/PageFooter.svelte";
 
     // export let data;
-
+/*
     import {
         PUBLIC_FIREBASE_API_KEY,
         PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -15,7 +15,7 @@
         PUBLIC_FIREBASE_STORAGE_BUCKET,
         PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
         PUBLIC_FIREBASE_APP_ID,
-    } from "$env/static/public";
+    } from "$env/static/public"; */
 
     const firebaseConfig =  {
         apiKey: PUBLIC_FIREBASE_API_KEY,
