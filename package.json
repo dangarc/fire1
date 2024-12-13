@@ -1,7 +1,7 @@
 {
     "name": "fire1",
     "version": "0.0.1",
-    "engines": { "node" :"20.9.0"},
+    "engines": { "node" :"20.18.1"},
     "type": "module",
     "scripts": {
         "dev": "vite dev",
